@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="">
+    <h1><span>We are launching</span> soon!</h1>
+    <h2>Subscribe and get notified</h2>
+  </header>
+  <main>
+    <form>
+      <input type="email" placeholder="Enter your email" class="input" required>
+      <a type="submit" onclick="checkForm()">Notify Me</a>
+    </form>
+    <p class="error"></p>
+    <img src="./images/illustration-dashboard.png" alt="" >
+  </main>
+  <footer>
+    <ion-icon name="logo-facebook" ></ion-icon>
+    <ion-icon name="logo-twitter" ></ion-icon>
+    <ion-icon name="logo-instagram" ></ion-icon>
+    <p>&copy; Copyright Ping. All rights reserved.</p>
+  </footer>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <script>
+    function checkForm(){
+      let input = document.querySelector('.input');
+      let paragraph = document.querySelector('.error');      
+
+      if(input.value === ""){
+        paragraph.textContent = "Whoops! It looks like you forgot to add your email";
+        return;
+      }
+
+      if(!input.validity.valid){
+        paragraph.textContent = "Please provide a valid email address";
+        return;
+      }
+      
+      paragraph.textContent = "";
+    }
+  </script>
+</body>
+</html>
